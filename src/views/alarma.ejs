@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analisis</title>
+    <!-- NAVIGATION -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">REMINDER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/alarma">Alarmas</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>REMINDER</h1>
+            <h2>
+                <p>Alarmas</p>
+            </h2>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-5">
+                <div class="card-body">
+
+                    <form method="POST">
+                        <fieldset>
+                            <legend>Crear Alarma</legend>
+
+                            <div class="form-group">
+                                <label for="title">Titulo</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="title" placeholder="Nueva alarma">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="app-fin">Aplicación a fin</label>
+                                <div class="col-md-9">
+                                    <select name="app-fin" id="app-fin">
+                                        <option value="faceboork">faceboork</option>
+                                        <option value="instagram">instagram</option>
+                                        <option value="youtube">youtube</option>
+                                        <option value="waze">waze</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <div class="col-md-9">
+                                    <input type="date" class="form-control" name="fecha">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lugar">Lugar</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="lugar"
+                                        placeholder="En casa #QueDateEnCasa">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="programacion">Tipo de programación</label>
+                                <div class="col-md-9">
+                                    <select name="programacion" id="programacion">
+                                        <option value="unica">Una vez</option>
+                                        <option value="diaria">diaria</option>
+                                        <option value="semanal">Semanal</option>
+                                        <option value="mensual">Mensual</option>
+                                        <option value="anual">Anual</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nota-especial">Nota especial</label>
+                                <div class="col-md-9">
+                                    <textarea type="text" class="form-control" name="nota-especial"
+                                        placeholder="Nueva alarma"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="archivo">Archivo</label>
+                                <div class="col-md-9">
+                                    <input type="file" id="archivo" name="archivo">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="repetir">Repetir alarma</label>
+                                <div class="col-md-9">
+                                    <select id="repetir" name="repetir">
+                                        <optgroup label=" Una vez">
+                                            <option value="una-vez">Una vez</option>
+                                        </optgroup>
+                                        <optgroup label="Minutos">
+                                            <option value="5min">5</option>
+                                            <option value="10min">10</option>
+                                            <option value="15min">15</option>
+                                            <option value="20min">20</option>
+                                            <option value="30min">30</option>
+                                            <option value="40min">40</option>
+                                            <option value="50min">50</option>
+                                            <option value="60min">60</option>
+                                        </optgroup>
+                                        <optgroup label="Hora">
+                                            <option value="1hora">1</option>
+                                            <option value="2hora">2</option>
+                                            <option value="3hora">3</option>
+                                            <option value="4hora">4</option>
+                                            <option value="5hora">5</option>
+                                            <option value="7hora">7</option>
+                                            <option value="9hora">9</option>
+                                            <option value="12hora">12</option>
+                                            <option value="15hora">15</option>
+                                            <option value="18hora">18</option>
+                                            <option value="21hora">21</option>
+                                            <option value="23hora">23</option>
+                                        </optgroup>
+                                        <optgroup label="Dias">
+                                            <option value="dia1">1</option>
+                                            <option value="dia2">2</option>
+                                            <option value="dia3">3</option>
+                                            <option value="dia4">4</option>
+                                            <option value="dia5">5</option>
+                                            <option value="dia6">6</option>
+                                            <option value="dia7">7</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notificar-terceros">Notificar a terceros</label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" name="notificar-terceros"
+                                        placeholder="info@reminder.com">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </fieldset>
+                    </form>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
