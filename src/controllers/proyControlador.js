@@ -8,7 +8,7 @@ controller.index = function (req, res) {
 };
 
 controller.alarma = function (req, res) {
-  res.render('alarma', {});
+  res.render('alarma', {message:''});
 }
 
 module.exports = controller;

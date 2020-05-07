@@ -14,7 +14,12 @@ router.get('/', proyControladors.index);
 
 router.get('/alarma', proyControladors.alarma);
 router.post('/alarma', (req, res) => {
-    console.log(req.body);
+    var body = req.body;
+    let { title, app_fin, fecha, lugar, recurrente, programacion, nota_especial, archivo, repetir, notificar_terceros } = body;
+    var data = {
+        message: `Alarma ${body.title} guardada con exito`
+    }
+    res.render('alarma', data);
 });
 
 module.exports = router;
