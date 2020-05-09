@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de Archivo</title>
+</head>
+<link rel="stylesheet" type="text/css" href="http://github.com/jquery/QUnit/raw/master/QUnit/QUnit.css" media="all" />
+<script type="text/javascript" src="http://github.com/jquery/QUnit/raw/master/QUnit/QUnit.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+<script type="text/javascript" src="Funciones.js"></script>
+<script type="text/javascript" src="FileSaver.js"></script>
+
+<body>
+
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+  <script type="text/javascript">
+
+ /* QUnit.test( 'Testing checkNumber()', function(assert) {
+  assert.ok( checkNumber( 0 ) );
+  assert.ok( checkNumber( 2 ) );
+  assert.ok( checkNumber( -4 ) );
+  assert.ok( checkNumber( 1 ) );
+  assert.ok( checkNumber( 'asdf' ) );
+  assert.ok( !checkNumber( 'asdf' ) );
+} );*/
+  ConsultarCambio();
+  QUnit.test( 'Testing ConsultarCambio()', function(assert) {
+  assert.ok( ConsultarCambio() );
+  
+} );
+
+  
+ LogCambio('hola');
+QUnit.test( 'Testing ShowFile()', function(assert) {
+  assert.ok( LogCambio('14/10/2019') );
+} );
+
+</script>
+
+</body>
+</html>

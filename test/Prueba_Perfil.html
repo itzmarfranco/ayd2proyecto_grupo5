@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prueba Ver Saldo</title>
+</head>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+
+  <h1 id="cuenta">00000</h1>
+
+  <script type="text/javascript">
+    Cuenta = function (nocuenta, nombre, apellido, dpi, saldoini, correo, contra) {
+      this.nocuenta = nocuenta;
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.dpi = dpi;
+      this.saldoini = saldoini;
+      this.correo = correo;
+    }
+  </script>
+
+<script type="text/javascript">
+  QUnit.test('Acceso a los componentes de la pagina', function (assert) {
+    document.getElementById('cuenta').innerText=29781;
+    let cuenta = document.getElementById('cuenta').innerText;    
+    let resultadoEsperado = 29781;
+
+    assert.equal(cuenta, resultadoEsperado, "Se accede correctamente");
+  });
+
+  QUnit.test('Testing usuario Loggeado', function (assert) {
+      
+    sessionStorage.setItem('cuenta',25467);
+    let logueado = sessionStorage.getItem('cuenta');
+    let resultadoEsperado = 25467;
+    sessionStorage.clear();
+
+    assert.equal(logueado, resultadoEsperado, "Se guardan las variables de sesion");
+  });
+
+</script>
+</body>
+
+</html>
