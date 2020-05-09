@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Registro <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/alarma">Alarmas</a>
+              <a class="nav-link" href="/login">Iniciar Sesion</a>
             </li>
 
           </ul>
@@ -38,10 +38,12 @@
       <div class="card-body">
         <H1> Registro </H1>
 
-        <form>
+        <form method="post" action="/">
             <fieldset>
 
-  
+              <% if (message.length > 0) { %>
+              <div class="alert alert-success col-sm-12"><%= message %></div>
+              <% } %>
               
 
               <div class="form-group">
@@ -77,13 +79,13 @@
             <div class="form-group">
                 <label for="password">Confirmar Contraseña</label>
                 <div class="col-md-9">
-                    <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="passwords" placeholder="Contraseña">
                 </div>
             </div>
             
 
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button id="btn-signup" type="submit" class="btn btn-primary">Submit</button>
             </fieldset>
           </form>
 

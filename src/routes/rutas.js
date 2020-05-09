@@ -7,13 +7,23 @@ const proyControladors = require('../controllers/proyControlador');
 
 
 //router.post'/registry', proyControlador.registro);
-//router.get('/',proyControlador.index);
-router.get('/', proyControladors.index);
+//router.get("/", proyControladors.index);
+//router.get("/", proyControladors.register);
 //router.get('/login',proyControlador.index);
 
 
-router.get('/alarma', proyControladors.alarma);
-router.post('/alarma', (req, res) => {
+
+router.get("/", proyControladors.signup);
+router.post("/", proyControladors.index);
+
+router.get("/login", proyControladors.log_user);
+router.post("/login", proyControladors.login_user);
+
+router.get("/dashboard", proyControladors.dashboard);
+
+
+router.get("/:id/alarma/", proyControladors.alarma);
+router.post('/:id/alarma/', (req, res) => {
     var body = req.body;
     let { title, app_fin, fecha, lugar, recurrente, programacion, nota_especial, archivo, repetir, notificar_terceros } = body;
     var data = {
