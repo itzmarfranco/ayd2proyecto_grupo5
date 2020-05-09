@@ -4,7 +4,23 @@ const router = express.Router();//generador de rutas
 
 const proyControladors = require('../controllers/proyControlador');
 
+const mysql = require('mysql');
+const hostDB = '18.188.212.217';
+const userDB = 'reminder';
+const passDB = '#Reminder1S2020';
+const nameDB = 'REMINDER';
+const portDB = '3306';
 
+var connection = mysql.createConnection(
+    {
+        connectionLimit: 10,
+        host: `${hostDB}`,
+        user: `${userDB}`,
+        password: `${passDB}`,
+        database: `${nameDB}`,
+        port: `${portDB}`
+    }
+);
 
 //router.post'/registry', proyControlador.registro);
 //router.get("/", proyControladors.index);
